@@ -9,11 +9,11 @@ with app:
 
 @app.on_message()
 def my_function(client, message):
-    if message.from_user.id != 422188879:
+    if message.from_user.id != 422188879:  # Edit this for Your id
         print(message)
-        app.forward_messages(422188879, message_ids=message.message_id, from_chat_id=message.from_user.id)
+        app.forward_messages(422188879, message_ids=message.message_id, from_chat_id=message.from_user.id)  # Edit this for Your id
 
-    if message.from_user.id == 422188879:
+    if message.from_user.id == 422188879:  # Edit this for Your id
         if message.text:
             app.send_message(message.reply_to_message.forward_from.id, message.text)
         elif message.photo:
